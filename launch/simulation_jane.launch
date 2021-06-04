@@ -11,9 +11,20 @@
     <arg name="debug" default="false" />
     <arg name="load_gripper" default="true" />
     <arg name="config" default="base" />
+    <arg name="joystick" default="false" />
+
 
     <include file="$(find ridgeback_description)/launch/description.launch">
         <arg name="config" value="$(arg config)" />
+    </include>
+
+    <node pkg="robot_localization" type="ekf_localization_node" name="ekf_localization" />
+
+    <node pkg="topic_tools" type="relay" name="cmd_vel_relay"
+            args="cmd_vel ridgeback_velocity_controller/cmd_vel" />
+
+    <include file="$(find ridgeback_control)/launch/teleop.launch">
+        <arg name="joystick" value="$(arg joystick)"/>
     </include>
 
     <!--launch GAZEBO with own world configuration -->
@@ -34,7 +45,7 @@
     <rosparam file="$(find panda_simulation)/config/gazebo_ros_control_params.yaml" command="load"/>
 
     <!-- load the controllers -->
-    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="joint_state_controller panda_arm_controller" />
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="joint_state_controller panda_arm_controller ridgeback_joint_publisher ridgeback_velocity_controller" />
     <node if="$(arg load_gripper)" name="controller_spawner_hand" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="panda_hand_controller" />
 
 
@@ -51,7 +62,8 @@
         <arg name="gripper_center" value="$(arg gripper_center)"/>
     </include>
     <group if="$(arg gui)">
-        <include file="$(find panda_moveit_config)/launch/moveit_rviz.launch" />
+        <!-- <include file="$(find panda_moveit_config)/launch/moveit_rviz.launch" /> -->
+        <node name="rviz" pkg="rviz" type="rviz" args="-d $(find panda_simulation)/config/jane_rviz.rviz" />
     </group>
 
     <node name="joint_state_desired_publisher" pkg="topic_tools" type="relay" args="joint_states joint_states_desired" />
