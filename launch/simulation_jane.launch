@@ -35,7 +35,7 @@
         <arg name="paused" value="$(arg paused)" />
         <arg name="use_sim_time" value="$(arg use_sim_time)" />
         <arg name="headless" value="$(arg headless)" />
-       <!--  <arg name="world_name" value="$(find panda_simulation)/worlds/table_blocks.world"/> -->
+        <arg name="world_name" value="$(find panda_simulation)/worlds/table_blocks.world"/>
     </include>
 
     <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -x -0.00 -y 0.00 -z 0.00 -model panda_ridgeback" />

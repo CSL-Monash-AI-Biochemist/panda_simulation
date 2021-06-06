@@ -13,18 +13,68 @@
 			<uri>model://96well_plate</uri>
 			<name>96 well plate</name>
 			<static>false</static>
-			<pose>0.20 0.40 0.95 0 0 0</pose>
+			<pose>2.20 0.40 0.95 0 0 0</pose>
 		</include>
 
 		<include>
 			<uri>model://table</uri>
-			<name>Table</name>
+			<name>Table1</name>
+			<static>true</static>
+			<pose>0 -3.6 0.0 0 0 0</pose>
+		</include>
+		<include>
+			<uri>model://table</uri>
+			<name>Table2</name>
+			<static>true</static>
+			<pose>2 -3.6 0.0 0 0 0</pose>
+		</include>
+		<include>
+			<uri>model://table</uri>
+			<name>Table2</name>
+			<static>true</static>
+			<pose>-2 -3.6 0.0 0 0 0</pose>
+		</include>
+
+		<include>
+			<uri>model://HPLC_box</uri>
+			<name>HPLC</name>
+			<static>true</static>
+			<pose>-0.5 -3.6 0.9 0 0 3.14159</pose>
+		</include>
+
+		<include>
+			<uri>model://pH_meter_stand</uri>
+			<name>pH_stand</name>
+			<static>true</static>
+			<pose>0.5 -3.6 0.9 0 0 0</pose>
+		</include>
+
+		<include>
+			<uri>model://pH_probe</uri>
+			<name>pH_probe</name>
+			<static>false</static>
+			<pose>0.5 -3.6 1.08 0 0 0</pose>
+		</include>
+
+		<include>
+			<uri>model://beaker</uri>
+			<name>beaker</name>
+			<static>true</static>
+			<pose>0 -3.6 0.9 0 0 0</pose>
+		</include>
+
+
+
+
+		<include>
+			<uri>model://GCF_lab</uri>
+			<name>GCF_lab</name>
 			<static>true</static>
 			<pose>0.0 0.0 0.0 0 0 0</pose>
 		</include>
 
 		<model name="unit_box">
-			<pose>0.20 0.40 0.90 0 0 0</pose>
+			<pose>2.20 0.40 0.90 0 0 0</pose>
 			<static>true</static>
 			<link name="link">
 				<inertial>
