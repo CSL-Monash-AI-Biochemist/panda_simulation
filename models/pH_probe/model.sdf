@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
   <model name="pH_probe">
-    <static>true</static>
+    <static>false</static>
     <link name="link">
 
       <inertial>
@@ -53,7 +53,12 @@
           </friction>
         </surface>
       </collision>
+
+
+
     </link>
+
+
   </model>
   
 </sdf>

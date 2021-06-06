@@ -13,9 +13,9 @@
 			<uri>model://96well_plate</uri>
 			<name>96 well plate</name>
 			<static>false</static>
-			<pose>-0.25 -3.5 1.25 0 0 1.5708</pose>
+			<pose>-0.25 -3.475 1.27 0 0 1.5708</pose>
 		</include>
-
+		
 		<include>
 			<uri>model://table</uri>
 			<name>Table1</name>
@@ -30,9 +30,22 @@
 		</include>
 		<include>
 			<uri>model://table</uri>
-			<name>Table2</name>
+			<name>Table3</name>
 			<static>true</static>
 			<pose>-2 -3.6 0.0 0 0 0</pose>
+		</include>
+		<include>
+			<uri>model://table</uri>
+			<name>Table4</name>
+			<static>true</static>
+			<pose>4 -3.6 0.0 0 0 0</pose>
+		</include>
+
+		<include>
+			<uri>model://table</uri>
+			<name>Table4</name>
+			<static>true</static>
+			<pose>5 -1.5 0.0 0 0 1.570800000709</pose>
 		</include>
 
 		<include>
@@ -64,12 +77,12 @@
 		</include>
 
 
-		<!-- <include>
+		<include>
 			<uri>model://ridgeback</uri>
 			<name>ridgeback</name>
 			<static>true</static>
-			<pose>0 -2.5 0 0 0 1.5708</pose>
-		</include> -->
+			<pose>0.48 -2.8 0 0 0 0</pose>
+		</include>
 
 
 
@@ -79,9 +92,9 @@
 			<static>true</static>
 			<pose>0.0 0.0 0.0 0 0 0</pose>
 		</include>
-<!-- 
+
 		<model name="unit_box">
-			<pose>2.20 0.40 0.90 0 0 0</pose>
+			<pose>-0.25 -3.475 1.25 0 0</pose>
 			<static>true</static>
 			<link name="link">
 				<inertial>
@@ -98,7 +111,7 @@
 				<collision name="collision">
 					<geometry>
 						<box>
-							<size>0.15 0.20 0.08</size>
+							<size>0.08 0.08 0.02</size>
 						</box>
 					</geometry>
 					<surface>
@@ -129,18 +142,18 @@
 				<visual name="visual">
 					<geometry>
 						<box>
-							<size>0.15 0.20 0.08</size>
+							<size>0.08 0.08 0.02</size>
 						</box>
 					</geometry>
 					<material>
 						<script>
 							<uri>file://media/materials/scripts/gazebo.material</uri>
-							<name>Gazebo/Blue</name>
+							<name>Gazebo/DarkGrey</name>
 						</script>
 					</material>
 				</visual>
 			</link>
-		</model> -->
+		</model>
 
 	</world>
 </sdf>
