@@ -3,6 +3,19 @@
   <model name="pH_probe">
     <static>true</static>
     <link name="link">
+
+      <inertial>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>1.1248e-04</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.3149e-04</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.3149e-04</izz>
+        </inertia>
+      </inertial>
+
       <visual name="visual">
         <geometry>
           <mesh>
@@ -14,14 +27,28 @@
       <collision name="collision">
         <geometry>
           <mesh>
-            <uri>model://pH_probe/meshes/pH_probe.dae</uri>
+            <uri>model://pH_probe/collision/pH_probe.stl</uri>
           </mesh>
         </geometry>
         <surface>
+          <contact>
+            <ode>
+              <soft_cfm>0.2</soft_cfm>
+              <soft_erp>0.2</soft_erp>
+              <kp>1e5</kp>
+              <kd>1.0</kd>
+            </ode>
+          </contact>
+          <contact>
+            <ode>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
           <friction>
             <ode>
-              <mu>10</mu>
-              <mu2>10</mu2>
+              <mu>1e10</mu>
+              <mu2>1e10</mu2>
             </ode>
           </friction>
         </surface>

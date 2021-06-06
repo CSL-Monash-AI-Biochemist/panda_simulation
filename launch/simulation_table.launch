@@ -24,7 +24,7 @@
         <arg name="world_name" value="$(find panda_simulation)/worlds/table_blocks.world"/>
     </include>
 
-    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -x -0.20 -y 0.00 -z 0.90 -model panda" />
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -x 0.2 -y -2.8 -z 0.70 -model panda" />
 
     <!-- Load joint controller configurations from YAML file to parameter server -->
     <rosparam file="$(find panda_simulation)/config/panda_control.yaml" command="load" />
