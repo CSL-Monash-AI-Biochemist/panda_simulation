@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="ridgeback">
+    <static>true</static>
+
+    <!-- <material name="dark_grey"><color rgba="0.2 0.2 0.2 1.0" </uri></material>
+    <material name="light_grey"><color rgba="0.4 0.4 0.4 1.0" </uri></material>
+    <material name="red"><color rgba="0.8 0.0 0.0 1.0" </uri></material>
+    <material name="white"><color rgba="0.9 0.9 0.9 1.0" </uri></material>
+    <material name="yellow"><color rgba="0.8 0.8 0.0 1.0" </uri></material>
+    <material name="black"><color rgba="0.15 0.15 0.15 1.0" </uri></material>
+ -->
+
+    <link name="chassis_link">
+        <visual name="visual3">
+          <geometry>
+          <mesh>
+            <uri>model://ridgeback/meshes/body.stl"</uri>
+          </mesh>
+          </geometry>
+          <!-- <material name="black" </uri> -->
+        </visual>
+        <collision name="collision2">
+          <geometry>
+          <mesh>
+            <uri>model://ridgeback/meshes/body-collision.stl"</uri>
+          </mesh>
+          </geometry>
+        </collision>
+      </link>
+
+  </model>
+  
+</sdf>
